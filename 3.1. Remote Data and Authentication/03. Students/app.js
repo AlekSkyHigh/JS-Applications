@@ -4,12 +4,13 @@ async function students() {
 
     const res = await fetch(url);
     const data = await res.json();
+    
     Object.values(data).forEach(student => {
         const firstName = student.firstName;
         const lastName = student.lastName;
         const facultyNumber = student.facultyNumber;
         const grade = Number(student.grade);
-        //create tr with all components
+        
         const tr = document.createElement('tr');
         const firstNameCell = tr.insertCell(0);
         firstNameCell.innerText = firstName;
